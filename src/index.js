@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const App = (Total, Content, Header) => {
+const App = (props) => {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
   const exercises1 = 10
@@ -19,7 +19,7 @@ const App = (Total, Content, Header) => {
   )
 }
 
-const Content = (Part) => {
+const Content = (props) => {
   const part1 = 'Fundamentals of React'
   const exercises1 = 10
   const part2 = 'Using props to pass data'
