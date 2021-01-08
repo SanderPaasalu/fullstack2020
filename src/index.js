@@ -1,62 +1,42 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-
-
-  
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 const App = () => {
-const[num1, setNum1] = useState(5);
-const[num2, setNum2] = useState(5);
-const[num3, setNum3] = useState(5);
-const Button = () => {
-  return (
-    <button onClick={() => setNum1(num1+1)}>+1</button>
-  )
-} 
-const ButtonNeg = () => {
-  return (
-    <button onClick={() => setNum1(num1-1)}>-1</button>
-  )
-} 
+  // const-definitions
 
-const Button2 = () => {
   return (
-    <button onClick={() => setNum2(num2+2)}>+2</button>
+    <div>
+      <Header course={course} />
+      <Content ... />
+      <Total ... />
+    </div>
   )
-}
-const Button2Neg = () => {
-  return (
-    <button onClick={() => setNum2(num2-2)}>+2</button>
-  )
-}
-const Button3 = () => {
-  return (
-    <button onClick={() => setNum3(num3+0.1)}>+0.1</button>
-  )
-}
-const Button3Neg = () => {
-  return (
-    <button onClick={() => setNum3(num3-0.1)}>+0.1</button>
-  )
-}
-return (
-  <>
-    <h1>Counter</h1>
-    <h2>Step: 1</h2>
-    <Button/>
-    <p>{num1}</p>
-    <ButtonNeg/>
-    <h2>Step: 2</h2>
-    <Button2/>
-    <p>{num2}</p>
-    <Button2Neg/>
-    <h2>Step: 3</h2>
-    <Button3/>
-    <p>{num3}</p>
-    <Button3Neg/>
-  </>
-)
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const App = () => {
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
+
+  return (
+    <div>
+      <h1>{course}</h1>
+      <p>
+        {part1} {exercises1}
+      </p>
+      <p>
+        {part2} {exercises2}
+      </p>
+      <p>
+        {part3} {exercises3}
+      </p>
+      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+    </div>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
