@@ -6,9 +6,9 @@ const App = () => {
 
   return (
     <div>
-      <Header course={course} />
-      <Content ... />
-      <Total ... />
+      <Header course={Fullstack2020} />
+      <Content part={parts}/>
+      <Total exercises={exercises}/>
     </div>
   )
 }
@@ -38,5 +38,7 @@ const App = () => {
     </div>
   )
 }
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'))
