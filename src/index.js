@@ -19,19 +19,42 @@ const statistics = (good, neutral, bad) => {
     )
   }
 
+const Button = (props) => {
+  return (
+    <button type='button' onClick={props.onClick}>{props.text}</button>
+  )
+}
+
 const App = () => {
   // save clicks of each button to its own state
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const handleButtonClick = (type) => {
+    switch(type) {
+      case 'good':
+        setGood(good+1);
+        break;
+      case 'neutral':
+        setNeutral(neutral+1);
+        break;
+      case 'bad':
+        setBad(bad+1);
+        break;
+      default:
+        break;
+    }
+      
+  }
   return (
     
     <div>
       <h1>give feedback</h1>
-      <form><button type='button' onClick={() => setGood(good+1)}>good</button>
-      <button type='button' onClick={() => setNeutral(neutral+1)}>neutral</button>
-      <button type='button' onClick={() => setBad(bad+1)}>bad</button>
+      <form>
+      <Button onClick={() => handleButtonClick("good")} text="good" />
+      <Button onClick={() => handleButtonClick("neutral")} text="neutral" />
+      <Button onClick={() => handleButtonClick("bad")} text="bad" />
       </form>{statistics(good, neutral, bad)}
     </div>
     
